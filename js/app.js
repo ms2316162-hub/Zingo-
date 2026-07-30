@@ -1,15 +1,20 @@
 
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("Zingo App Started");
-
     const app = document.getElementById("app");
 
-    if (app) {
+    app.innerHTML = `
+        <div id="splash">
+            <h1>Zingo</h1>
+            <p>Short Video Social Platform</p>
+        </div>
+    `;
+
+    setTimeout(() => {
         app.innerHTML = `
-            <div style="display:flex;justify-content:center;align-items:center;height:100vh;flex-direction:column;">
-                <h1 style="font-size:42px;color:#00ff99;">Zingo</h1>
-                <p style="font-size:18px;color:white;">Welcome to Zingo 🚀</p>
+            <div id="home">
+                <h2>🏠 Home Feed</h2>
+                <p>Zingo is loading reels...</p>
             </div>
         `;
-    }
+    }, 3000);
 });
