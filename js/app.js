@@ -2,21 +2,36 @@
 document.addEventListener("DOMContentLoaded", () => {
     const app = document.getElementById("app");
 
-    app.innerHTML = `
-        <div id="reel-container">
-            <video
-                id="reelVideo"
-                src="https://www.w3schools.com/html/mov_bbb.mp4"
-                autoplay
-                muted
-                loop
-                playsinline
-            ></video>
+    const reels = [
+        {
+            username: "@zingo",
+            caption: "Welcome to Zingo 🚀",
+            video: "https://www.w3schools.com/html/mov_bbb.mp4"
+        }
+    ];
 
-            <div id="overlay">
-                <h3>@zingo</h3>
-                <p>Welcome to Zingo 🚀</p>
+    let current = 0;
+
+    function showReel(index) {
+        const reel = reels[index];
+
+        app.innerHTML = `
+            <div id="reel-container">
+                <video id="reelVideo"
+                    src="${reel.video}"
+                    autoplay
+                    muted
+                    loop
+                    playsinline>
+                </video>
+
+                <div id="overlay">
+                    <h3>${reel.username}</h3>
+                    <p>${reel.caption}</p>
+                </div>
             </div>
-        </div>
-    `;
+        `;
+    }
+
+    showReel(current);
 });
