@@ -3,18 +3,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const app = document.getElementById("app");
 
     app.innerHTML = `
-        <div id="splash">
-            <h1>Zingo</h1>
-            <p>Short Video Social Platform</p>
+        <div id="reel-container">
+            <video
+                id="reelVideo"
+                src="https://www.w3schools.com/html/mov_bbb.mp4"
+                autoplay
+                muted
+                loop
+                playsinline
+            ></video>
+
+            <div id="overlay">
+                <h3>@zingo</h3>
+                <p>Welcome to Zingo 🚀</p>
+            </div>
         </div>
     `;
-
-    setTimeout(() => {
-        app.innerHTML = `
-            <div id="home">
-                <h2>🏠 Home Feed</h2>
-                <p>Zingo is loading reels...</p>
-            </div>
-        `;
-    }, 3000);
 });
